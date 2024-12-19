@@ -1,12 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{EA59F904-FBC1-459D-BD27-31D11838BD67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "UrlShortener.Application\Application.csproj", "{EA59F904-FBC1-459D-BD27-31D11838BD67}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8C2E7EDD-D246-4623-9636-69649BF5AA31} = {8C2E7EDD-D246-4623-9636-69649BF5AA31}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "src\WebAPI\WebAPI.csproj", "{1F4A435F-840C-4F3B-B6DF-AC6B3845CD62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "UrlShortener.WebAPI\WebAPI.csproj", "{1F4A435F-840C-4F3B-B6DF-AC6B3845CD62}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EA59F904-FBC1-459D-BD27-31D11838BD67} = {EA59F904-FBC1-459D-BD27-31D11838BD67}
+		{FE657A1F-BE65-440A-A7EC-1781D5E0E74F} = {FE657A1F-BE65-440A-A7EC-1781D5E0E74F}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{8C2E7EDD-D246-4623-9636-69649BF5AA31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "UrlShortener.Domain\Domain.csproj", "{8C2E7EDD-D246-4623-9636-69649BF5AA31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{FE657A1F-BE65-440A-A7EC-1781D5E0E74F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "UrlShortener.Infrastructure\Infrastructure.csproj", "{FE657A1F-BE65-440A-A7EC-1781D5E0E74F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
