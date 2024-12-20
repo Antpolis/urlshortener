@@ -1,4 +1,7 @@
-﻿namespace UrlShortener.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace UrlShortener.Domain.Entities;
 
 [Table("url")]
 public class URLEntity

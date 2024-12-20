@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using UrlShortener.Domain.Interfaces;
 
 namespace UrlShortener.Domain.Entities;
 
 [Table("user")]
-public class UserEntity
+public class UserEntity: IAuditableUser
 {
   [Column("id")]
   [Key]  

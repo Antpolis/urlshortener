@@ -1,7 +1,12 @@
-﻿namespace UrlShortener.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using UrlShortener.Domain.Abstracts;
+using UrlShortener.Domain.Interfaces;
+
+namespace UrlShortener.Domain.Entities;
 
 [Table("tag")]
-public class TagEntity {
+public class TagEntity: AuditAbstract {
   
   [Key]
   [Column("id")]

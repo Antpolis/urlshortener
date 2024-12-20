@@ -5,10 +5,15 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>UrlShortener.WebAPI</RootNamespace>
+        <UserSecretsId>8ed5853a-1555-460d-bf8c-cd15b9f1a114</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\UrlShortener.Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

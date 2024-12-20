@@ -1,4 +1,13 @@
+using UrlShortener.Application;
+using UrlShortener.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddApplicationService();
+builder.Services.AddInfrastructureServices(builder.Configuration);
+
+
 
 // Add services to the container.
 

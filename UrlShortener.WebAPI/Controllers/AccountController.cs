@@ -1,6 +1,14 @@
-﻿namespace UrlShortener.WebAPI.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
 
-[JsonController]
+namespace UrlShortener.WebAPI.Controllers;
+
+[ApiController]
+[Route("[controller]")]
 public class AccountController
 {
+    [HttpGet("testing")]
+    public string Testing()
+    {
+        return "testing";
+    }
 }

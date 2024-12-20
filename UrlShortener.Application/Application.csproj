@@ -9,4 +9,8 @@
         <OutputType>Library</OutputType>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\UrlShortener.Domain\Domain.csproj" />
+    </ItemGroup>
+
 </Project>
