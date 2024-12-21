@@ -8,10 +8,10 @@ public class URLEntity
 {
   [Key]
   [Column("id")]
-  public int ID { get; set; }
+  public ulong ID { get; set; }
 
   [Column("domainID", TypeName = "int")]
-  public int? DomainID { get; set; }
+  public uint? DomainID { get; set; }
 
   [Column("redirectURL", TypeName = "text")]
   public string? RedirectURL { get; set; }
@@ -20,7 +20,7 @@ public class URLEntity
   public string? FullURL { get; set; }
 
   [Column("accountID", TypeName = "int")]
-  public int? AccountID { get; set; }
+  public uint? AccountID { get; set; }
 
   [Column("ownerID", TypeName = "int")]
   public int? OwnerID { get; set; }
@@ -46,6 +46,6 @@ public class URLEntity
   [ForeignKey("DomainID")]  
   public DomainEntity? Domain { get; set; }
 
-  [ForeignKey("OwnerID")]  
+  [ForeignKey("AccountID")]  
   public AccountEntity? Account { get; set; }
 }

@@ -9,8 +9,7 @@ public class RequestLocationEntity
 {
   [Key]
   [Column("id")]
-  public uint ID {get;set;}  
-
+  public ulong ID {get;set;}  
   
   [Column("continent", TypeName = "varchar(5)")]
   public string? ContinentCode {get;set;}
@@ -36,20 +35,21 @@ public class RequestLocationEntity
   [Column("postalCode", TypeName = "varchar(25)")]
   public string? PostalCode {get;set;}
 
-  [Column("location")]
-  public Point? Location {get;set;}
-
+  // [Column("location")]
+  // public Point? Location {get;set;}
   
   [Column("latitude", TypeName = "varchar(12)")]
   public string? Latitude {get;set;}
-
   
   [Column("longitude", TypeName = "varchar(12)")]
   public string? Longitude {get;set;}  
-
   
   [Column("requestID")]
-  public uint RequestID {get;set;}
+  public ulong RequestID {get;set;}
+  
+  [Column("hashCache")]
+  [StringLength(50)]
+  public string HashCache {get;set;}
 
   [ForeignKey("RequestID")]
   [Required]
