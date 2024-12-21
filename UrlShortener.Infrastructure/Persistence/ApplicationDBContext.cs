@@ -8,7 +8,7 @@ using Domain.Entities;
 
 public class ApplicationDBContext : DbContext, IApplicationContext
 {
-    public DbSet<AccountEntity> AccountEntity => Set<AccountEntity>();
+    public DbSet<AccountEntity> AccountEntity { get; set; }
     public DbSet<DomainEntity> DomainEntity => Set<DomainEntity>();
     public DbSet<RequestEntity> RequestEntity => Set<RequestEntity>();
     public DbSet<RequestLocationEntity> RequestLocationEntity => Set<RequestLocationEntity>();
@@ -26,11 +26,12 @@ public class ApplicationDBContext : DbContext, IApplicationContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        
+        base.OnModelCreating(builder);
+        builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDBContext).Assembly);
+        Console.WriteLine("testing");
         // builder.HasCharSet("utf8mb4", true)
 	       //  .UseCollation("utf8mb4_general_ci");
-        base.OnModelCreating(builder);
+        
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

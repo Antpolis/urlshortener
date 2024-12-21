@@ -4,9 +4,6 @@ using UrlShortener.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddApplicationService();
-builder.Services.AddInfrastructureServices(builder.Configuration);
-
 
 
 // Add services to the container.
@@ -14,6 +11,9 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddApplicationService();
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 var app = builder.Build();
 
