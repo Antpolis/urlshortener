@@ -8,23 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="314ed228-c59d-434c-8cbe-f9ba37e55eb2" name="Changes" comment="update to windows">
-      <change afterPath="$PROJECT_DIR$/UrlShortener.Application/Commands/CreateAccountCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UrlShortener.Application/DTOs/AccountDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UrlShortener.Application/Handlers/CreateAccountHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UrlShortener.Application/Mappers/AccountMapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UrlShortener.WebAPI/DTOs/AccountDTO.cs" afterDir="false" />
+    <list default="true" id="314ed228-c59d-434c-8cbe-f9ba37e55eb2" name="Changes" comment="update to mac">
+      <change afterPath="$PROJECT_DIR$/UrlShortener.Application/Handlers/GetTrafficRedirectHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UrlShortener.Application/Queries/GetTrafficRedirectQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/RedirectController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Application/ApplicationStartUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/ApplicationStartUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Interfaces/IApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Interfaces/IApplicationContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestLocationEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestLocationEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/URLEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/URLEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Infrastructure/InfrastructureStartUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Infrastructure/InfrastructureStartUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Infrastructure/Persistence/ApplicationDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Infrastructure/Persistence/ApplicationDBContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.WebAPI/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.WebAPI/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/urlShortener.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/urlShortener.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +30,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6335a9b3ee98432a2f7d34b0e72bc7ff493724d88a327119c915b2d7a511c/FromQueryAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/chrissim/Projects/antpolis/urlshortener/UrlShortener.Infrastructure/InfrastructureStartUp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/chrissim/Projects/antpolis/urlshortener/UrlShortener.Infrastructure/Persistence/ApplicationDBContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/chrissim/Projects/antpolis/urlshortener/UrlShortener.WebAPI/Controllers/AccountController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/chrissim/Projects/antpolis/urlshortener/UrlShortener.WebAPI/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/chrissim/Projects/antpolis/urlshortener/UrlShortener.WebAPI/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/chrissim/Projects/antpolis/urlshortener/UrlShortener.WebAPI/appsettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -115,7 +105,7 @@
       <window_info anchor="right" id="Test Coverage" />
       <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
       <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
-      <window_info anchor="right" id="Database" order="2" visible="true" weight="0.3300872" />
+      <window_info anchor="right" id="Database" order="2" weight="0.3300872" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
       <window_info anchor="right" id="Maven" order="4" weight="0.25" />
       <window_info anchor="right" id="Monitoring" order="4" weight="0.3300872" />
@@ -161,7 +151,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734709345425</updated>
-      <workItem from="1734709346551" duration="16971000" />
+      <workItem from="1734709346551" duration="18851000" />
     </task>
     <task id="LOCAL-00001" summary="update to windows">
       <option name="closed" value="true" />
@@ -171,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734750589786</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update to mac">
+      <option name="closed" value="true" />
+      <created>1734792575695</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734792575695</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +180,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="update to windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to windows" />
+    <MESSAGE value="update to mac" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to mac" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
