@@ -4,8 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace UrlShortener.Domain.Entities;
 
 [Table("url")]
-public class URLEntity
-{
+public class URLEntity {
   [Key]
   [Column("id")]
   public ulong ID { get; set; }
@@ -14,7 +13,8 @@ public class URLEntity
   public uint? DomainID { get; set; }
 
   [Column("redirectURL", TypeName = "text")]
-  public string? RedirectURL { get; set; }
+  [Required]
+  public string RedirectUrl { get; set; } = null!;
 
   [Column("fullURL", TypeName = "varchar(255)")]
   public string? FullURL { get; set; }
@@ -48,4 +48,7 @@ public class URLEntity
 
   [ForeignKey("AccountID")]  
   public AccountEntity? Account { get; set; }
+
+  [Column("active")]
+  public bool IsActive {get;set;}
 }

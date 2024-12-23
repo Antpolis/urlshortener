@@ -1,65 +1,67 @@
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using UrlShortener.Application.Interfaces;
+using UrlShortener.Application.Mappers;
 using UrlShortener.Application.Queries;
-using UrlShortener.Domain.Entities;
+using UrlShortener.Application.QueryExtensions;
+using UrlShortener.Application.Responses;
 
 namespace UrlShortener.Application.Handlers;
 
 public class GetTrafficRedirectHandler(IApplicationContext applicationContext)
-    : IRequestHandler<GetTrafficRedirectQuery, URLEntity>
+    : IRequestHandler<GetTrafficRedirectQuery, GetTrafficRedirectResponse>
 {
     private readonly IApplicationContext _applicationContext = applicationContext;
+    
+    private string[] VALID_IP_HEADER_CANDIDATES = { 
+        "X-Forwarded-For",
+        "Proxy-Client-IP",
+        "WL-Proxy-Client-IP",
+        "HTTP_X_FORWARDED_FOR",
+        "HTTP_X_FORWARDED",
+        "HTTP_X_CLUSTER_CLIENT_IP",
+        "HTTP_CLIENT_IP",
+        "HTTP_FORWARDED_FOR",
+        "HTTP_FORWARDED",
+        "HTTP_VIA",
+        "REMOTE_ADDR" };
 
-    public Task<URLEntity> Handle(GetTrafficRedirectQuery request, CancellationToken cancellationToken)
+    public async Task<GetTrafficRedirectResponse> Handle(GetTrafficRedirectQuery request, CancellationToken cancellationToken)
     {
-        const domainName = request.headers["host"];
-        const domainResult: Domain = await this.domainRepo.getDomainByName(domainName).getOne();
-    
-    
+        var domainModel = await _applicationContext.DomainEntity.AsQueryable().GetByName(request.Host).FirstOrDefaultAsync(cancellationToken);
 
-        let redirectURL = defaultURL
-        if(domainResult) {
-            redirectURL = domainResult.defaultLink?domainResult.defaultLink:defaultURL
+        var returnResult = new GetTrafficRedirectResponse();
+        returnResult.PermRedirect = false;
+        if(domainModel != null)
+        {
+            returnResult.RedirectUrl = domainModel.DefaultLink;
         }
 
-        if (hash && hash.trim() !== "" && domainResult) {
-            const urlEntity = await this.urlRepo
-                .getUrlByHash(hash)
-                .andWhere("domainID = :domainID", { domainID: domainResult.id })
-            .getOne();
-
-            if(urlEntity) {
-                let ipAddress:string;
-                const userAgent = request.headers['user-agent'];
-                // Check for IP
-                if (request.headers["x-real-ip"]) {
-                    ipAddress = request.headers["x-real-ip"];
-                } else {
-                    ipAddress = request.remoteAddress;
-                }
-       
-                let urlRequestObjct = {
-                    "headers" : request.headers,
-                    "userAgent":userAgent,
-                    "hash": hash,
-                    "host": domainName,
-                    "urlEntityID": urlEntity.id,
-                    "ipAddress": ipAddress,
-                    "requestDate": moment().toString()
-                }
-
-                // let result  = await this.urlRequestDumpRepo.saveUrlRequestDump(urlRequestObjct);
-                console.log("Request Dump Result: ", urlRequestObjct)
-                await sendSnsTopic(urlRequestObjct,'/raw-request/'+domainName+'/'+hash, ['request'],urlEntity.id);
+        var urlModel = await _applicationContext.UrlEntity.AsQueryable().GetByHash(request.Hash)
+            .Where(d => domainModel != null && d.DomainID == domainModel.ID)
+            .FirstOrDefaultAsync(cancellationToken);
         
-                if (redirectURL) {
-                    response.status(301)
-                    redirectURL = urlEntity.redirectURL          
-                }
+        if(urlModel != null)
+        {
+            returnResult.RedirectUrl = urlModel.RedirectUrl;
+            returnResult.PermRedirect = true;
 
-            }
+            var ipAddress = request.Headers
+                .FirstOrDefault(header => VALID_IP_HEADER_CANDIDATES.Contains(header.Key))
+                .Value.ToString() ?? "unknown";
+
+            var createRequestCommand = request.ToCreateRequest(urlModel.ID, ipAddress);
+
+            //
+            // console.log("Request Dump Result: ", urlRequestObjct)
+            // await sendSnsTopic(urlRequestObjct,'/raw-request/'+domainName+'/'+hash, ['request'],urlEntity.id);
+            //
+            // if (redirectURL) {
+            //     response.status(301)
+            //     redirectURL = urlEntity.redirectURL          
+            // }
         }
 
-        response.redirect(redirectURL)
+        return returnResult;
     }
 }

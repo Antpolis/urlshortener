@@ -21,7 +21,7 @@ public static class InfrastructureStartUp
         services.AddDbContext<ApplicationDBContext>();
         //
         // services.AddScoped<ApplicationDBContext>(p=>p.GetRequiredService<ApplicationDBContext>());
-        
+        services.AddHostedService<GeoIPDatabaseDownloaderService>();
         
         return services;
     }
