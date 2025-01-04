@@ -4,5 +4,5 @@ namespace UrlShortener.Application.Interfaces;
 
 
 public interface ILocationService {
-    Task<string> FindLocationByIPAsync(IPAddress userIP, CancellationToken cancellationToken);
+    Task<Dictionary<string, object>?> FindLocationByIPAsync(IPAddress userIP, CancellationToken cancellationToken);
 }

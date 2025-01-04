@@ -1,17 +1,14 @@
 namespace UrlShortener.Infrastructure.Services;
 using UrlShortener.Application.Interfaces;
-using System.Net;
 using MaxMind.Db;
+using System.Net;
 
 public class GeoIPService : ILocationService
     {
-        private readonly HttpClient _httpClient;
+        private readonly HttpClient _httpClient = new HttpClient();
         private const string DatabasePath = "GeoLite2-City.mmdb"; // Adjust the path as necessary
 
-        public GeoIPService(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
+        public GeoIPService() { }
 
         public async Task DownloadGeoIPDatabaseAsync() {
             var url = "";
@@ -33,7 +30,7 @@ public class GeoIPService : ILocationService
             }
         }
 
-        public async Task<string> FindLocationByIPAsync(IPAddress userIP, CancellationToken cancellationToken)
+        public async Task<Dictionary<string, object>?> FindLocationByIPAsync(IPAddress userIP, CancellationToken cancellationToken)
         {
             // Ensure the database is downloaded before reading
             if (!File.Exists(DatabasePath))
@@ -43,8 +40,8 @@ public class GeoIPService : ILocationService
 
             using (var reader = new Reader(DatabasePath))
             {
-                var location = reader.f
-                return location;                
+                var location = reader.Find<Dictionary<string, object>>(userIP);
+                return location;
             }
         }
 
@@ -61,13 +58,3 @@ public class GeoIPService : ILocationService
         throw new NotImplementedException();
     }
 }
-
-    public class GeoLocation
-    {
-        public City City { get; set; }
-    }
-
-    public class City
-    {
-        public Dictionary<string, string> Names { get; set; }
-    }

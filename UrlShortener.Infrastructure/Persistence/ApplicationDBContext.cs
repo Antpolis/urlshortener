@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using UrlShortener.Application.Interfaces;
 using UrlShortener.Domain.Abstracts;
 
 namespace UrlShortener.Infrastructure.Persistence;
@@ -7,7 +8,7 @@ namespace UrlShortener.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 
-public class ApplicationDBContext : DbContext
+public class ApplicationDBContext : DbContext, IApplicationContext
 {
     
     private readonly AuditableEntitySaveChangesInterceptor _auditableEntitySaveChangesInterceptor;
@@ -37,15 +38,10 @@ public class ApplicationDBContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.AddInterceptors(_auditableEntitySaveChangesInterceptor);
-        // NpgsqlConnectionStringBuilder connectionBuilder = new NpgsqlConnectionStringBuilder();
-        // connectionBuilder.Password = _configuration["DB:Password"];
-        // connectionBuilder.Username = _configuration["DB:UserName"];
-        // connectionBuilder.Host= _configuration["DB:Host"];
-        // connectionBuilder.Database = _configuration["DB:Name"];
-        // connectionBuilder.Encoding = "UTF8";
+        
         // string connectionString = connectionBuilder.ConnectionString;
         // Console.WriteLine(connectionString);
-        optionsBuilder.UseNpgsql("Server=192.168.50.243;Port=5432;Userid=url-shortener-user;Password=[ZO~L|%TsBzMUg,ThL4220^Zb;Pooling=false;MinPoolSize=1;MaxPoolSize=20;Timeout=15;Database=url-shortener");
+        
         // optionsBuilder
             // .UseNpgsql(connectionString );
     }
@@ -85,11 +81,11 @@ public class ApplicationDBContext : DbContext
     }
     
     public DbSet<AccountEntity> AccountEntity { get; set; }
-    public DbSet<DomainEntity> DomainEntity => Set<DomainEntity>();
-    public DbSet<RequestEntity> RequestEntity => Set<RequestEntity>();
-    public DbSet<RequestLocationEntity> RequestLocationEntity => Set<RequestLocationEntity>();
-    public DbSet<TagEntity> TagEntity => Set<TagEntity>();
-    public DbSet<URLEntity> UrlEntity => Set<URLEntity>();
-    public DbSet<UserEntity> UserEntity => Set<UserEntity>();
+    public DbSet<DomainEntity> DomainEntity  { get; set; }
+    public DbSet<RequestEntity> RequestEntity  { get; set; }
+    public DbSet<RequestLocationEntity> RequestLocationEntity  { get; set; }
+    public DbSet<TagEntity> TagEntity  { get; set; }
+    public DbSet<URLEntity> UrlEntity  { get; set; }
+    public DbSet<UserEntity> UserEntity  { get; set; }
 
 }

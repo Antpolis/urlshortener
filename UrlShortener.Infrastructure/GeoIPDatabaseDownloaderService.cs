@@ -60,7 +60,7 @@ namespace UrlShortener.Infrastructure
 
             try
             {
-                var response = await _httpClient.GetAsync(url);
+                var response = await _httpClient.GetAsync("");
                 response.EnsureSuccessStatusCode();
 
                 var filePath = Path.Combine(DataDirectory, fileName);

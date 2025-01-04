@@ -29,13 +29,12 @@ public class AccountController
     {
         return null;
     }
-
     
     [HttpPost("create")]
     public async Task<AccountDTO>? Create([FromBody] AccountDTO account)
     {
         var model = await _sender.Send(account.ToCreateAccountCommand());
-        
+        return model.ToAccountDto();
     }
     
     [HttpPost("update/{id}")]
