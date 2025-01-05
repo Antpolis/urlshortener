@@ -58,21 +58,21 @@ public class CreateRequestHandler : IRequestHandler<CreateRequestCommand, Create
         requestModel.IsUnique = true;
       }
       
-      if(IPAddress.TryParse(request.IPAddress, out IPAddress ipAddress)) {
-        var geoEntity = await _locationService.FindLocationByIPAsync(ipAddress, cancellationToken);
-        if (geoEntity != null) {
-          var requestLocationModel = new RequestLocationEntity();
-          // requestLocationModel.ContinentCode = geoEntity.get.continent;
-          // requestLocationModel.ContinentName = geoName.continentName;
-          // requestLocationModel.ISOCode = geoName.ISOCode;
-          // requestLocationModel.CountryName = geoName.countryName;
-          // requestLocationModel.CityName = geoName.cityName;
-          // requestLocationModel.PostalCode = geoEntity.postalCode;
-          // requestLocationModel.Latitude = geoEntity.latitude;
-          // requestLocationModel.Longitude = geoEntity.longitude;
-        }
-
-     }
+     //  if(IPAddress.TryParse(request.IPAddress, out IPAddress ipAddress)) {
+     //    var geoEntity = await _locationService.FindLocationByIPAsync(ipAddress, cancellationToken);
+     //    if (geoEntity != null) {
+     //      var requestLocationModel = new RequestLocationEntity();
+     //      // requestLocationModel.ContinentCode = geoEntity.get.continent;
+     //      // requestLocationModel.ContinentName = geoName.continentName;
+     //      // requestLocationModel.ISOCode = geoName.ISOCode;
+     //      // requestLocationModel.CountryName = geoName.countryName;
+     //      // requestLocationModel.CityName = geoName.cityName;
+     //      // requestLocationModel.PostalCode = geoEntity.postalCode;
+     //      // requestLocationModel.Latitude = geoEntity.latitude;
+     //      // requestLocationModel.Longitude = geoEntity.longitude;
+     //    }
+     //
+     // }
     
     }
     return null;

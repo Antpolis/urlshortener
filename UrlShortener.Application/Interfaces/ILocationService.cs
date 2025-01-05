@@ -1,8 +1,9 @@
 using System.Net;
+using UrlShortener.Application.DTOs;
 
 namespace UrlShortener.Application.Interfaces;
 
 
 public interface ILocationService {
-    Task<Dictionary<string, object>?> FindLocationByIPAsync(IPAddress userIP, CancellationToken cancellationToken);
+    Task<GeoLocation?> FindLocationByIPAsync(IPAddress userIP, CancellationToken cancellationToken);
 }

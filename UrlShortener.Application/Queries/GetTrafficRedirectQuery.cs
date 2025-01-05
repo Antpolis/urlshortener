@@ -1,3 +1,4 @@
+using System.Net;
 using MediatR;
 using Microsoft.Extensions.Primitives;
 using UrlShortener.Application.DTOs;
@@ -13,4 +14,5 @@ public record GetTrafficRedirectQuery: IRequest<GetTrafficRedirectResponse>
   public List<KeyValuePair<string, StringValues>> Headers { get; set; }
   public DateTime RequestDate { get; set; }
   public string? RemoteAddress { get; set; }
+  public IPAddress? IP { get; set; }
 }

@@ -1,17 +1,23 @@
+using System.Net;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using MyCSharp.HttpUserAgentParser;
+using MyCSharp.HttpUserAgentParser.Providers;
 using UrlShortener.Application.Interfaces;
 using UrlShortener.Application.Mappers;
 using UrlShortener.Application.Queries;
 using UrlShortener.Application.QueryExtensions;
 using UrlShortener.Application.Responses;
+using UrlShortener.Domain.Entities;
 
 namespace UrlShortener.Application.Handlers;
 
-public class GetTrafficRedirectHandler(IApplicationContext applicationContext)
+public class GetTrafficRedirectHandler(IApplicationContext applicationContext, IHttpUserAgentParserProvider parser, ILocationService locationService)
     : IRequestHandler<GetTrafficRedirectQuery, GetTrafficRedirectResponse>
 {
     private readonly IApplicationContext _applicationContext = applicationContext;
+    private readonly IHttpUserAgentParserProvider _parser = parser;
+    private readonly ILocationService _locationService = locationService;
     
     private string[] VALID_IP_HEADER_CANDIDATES = { 
         "X-Forwarded-For",
@@ -25,6 +31,18 @@ public class GetTrafficRedirectHandler(IApplicationContext applicationContext)
         "HTTP_FORWARDED",
         "HTTP_VIA",
         "REMOTE_ADDR" };
+    private readonly string[] BOT_USERAGENT = {
+        "WhatsApp",
+        "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)",
+        "facebookexternalhit/1.1",
+        "Facebot",
+        "spider",
+        "jeeves",
+        "crawler",
+        "bot",
+        "AHC",
+        "dataminr.com"
+    };
 
     public async Task<GetTrafficRedirectResponse> Handle(GetTrafficRedirectQuery request, CancellationToken cancellationToken)
     {
@@ -43,14 +61,14 @@ public class GetTrafficRedirectHandler(IApplicationContext applicationContext)
         
         if(urlModel != null)
         {
-            returnResult.RedirectUrl = urlModel.RedirectUrl;
-            returnResult.PermRedirect = true;
-
-            var ipAddress = request.Headers
-                .FirstOrDefault(header => VALID_IP_HEADER_CANDIDATES.Contains(header.Key))
-                .Value.ToString() ?? "unknown";
-
-            var createRequestCommand = request.ToCreateRequest(urlModel.ID, ipAddress);
+            // returnResult.RedirectUrl = urlModel.RedirectUrl;
+            // returnResult.PermRedirect = true;
+            //
+            // var ipAddress = request.Headers
+            //     .FirstOrDefault(header => VALID_IP_HEADER_CANDIDATES.Contains(header.Key))
+            //     .Value.ToString() ?? "unknown";
+            //
+            // var createRequestCommand = request.ToCreateRequest(urlModel.ID, ipAddress);
 
             //
             // console.log("Request Dump Result: ", urlRequestObjct)

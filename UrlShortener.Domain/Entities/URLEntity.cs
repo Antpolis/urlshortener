@@ -6,7 +6,7 @@ namespace UrlShortener.Domain.Entities;
 [Table("url")]
 public class URLEntity {
   [Key]
-  [Column("id")]
+  [Column("id", TypeName = "bigint")]
   public ulong ID { get; set; }
 
   [Column("domainID", TypeName = "int")]
@@ -31,10 +31,10 @@ public class URLEntity {
   [Column("hash", TypeName = "varchar(125)")]
   public string? Hash { get; set; }
 
-  [Column("startDate", TypeName = "datetime")]
+  [Column("startDate", TypeName = "TIMESTAMPTZ")]
   public DateTime? StartDate { get; set; }
 
-  [Column("endDate", TypeName = "datetime")]
+  [Column("endDate", TypeName = "TIMESTAMPTZ")]
   public DateTime? EndDate { get; set; }
 
   [Column("campaignID", TypeName = "int")]

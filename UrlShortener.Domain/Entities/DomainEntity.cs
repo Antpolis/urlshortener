@@ -7,7 +7,7 @@ namespace UrlShortener.Domain.Entities;
 [Table("domain")]
 public class DomainEntity {
   [Key]
-  [Column("id")]
+  [Column("id", TypeName = "integer")]
   public uint ID {get;set;}
 
   [ForeignKey("accountID")]

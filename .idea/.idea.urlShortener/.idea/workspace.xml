@@ -10,18 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="314ed228-c59d-434c-8cbe-f9ba37e55eb2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/UrlShortener.Application/DTOs/GeoLocation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources/f79a65b6-cbd1-4538-be65-100be9c753bd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources/f79a65b6-cbd1-4538-be65-100be9c753bd.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources/f79a65b6-cbd1-4538-be65-100be9c753bd/storage_v2/_src_/database/url-shortener.tGKItw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources/f79a65b6-cbd1-4538-be65-100be9c753bd/storage_v2/_src_/database/url-shortener.tGKItw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Handlers/CreateRequestHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Handlers/CreateRequestHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Handlers/GetTrafficRedirectHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Handlers/GetTrafficRedirectHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Interfaces/ILocationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Interfaces/ILocationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Infrastructure/GeoIPDatabaseDownloaderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Infrastructure/GeoIPDatabaseDownloaderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Queries/GetTrafficRedirectQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Queries/GetTrafficRedirectQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/AccountEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/AccountEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/DomainEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/DomainEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestLocationEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestLocationEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/TagEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/TagEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/URLEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/URLEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/UserEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/UserEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UrlShortener.Infrastructure/InfrastructureStartUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Infrastructure/InfrastructureStartUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Infrastructure/Persistence/ApplicationDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Infrastructure/Persistence/ApplicationDBContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UrlShortener.Infrastructure/Services/GeoIPService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Infrastructure/Services/GeoIPService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/AccountController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/RedirectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/RedirectController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.WebAPI/Mappers/AccountMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.WebAPI/Mappers/AccountMapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/urlShortener.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/urlShortener.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,11 +43,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b28fd04dd1164b8fa33f22ee8aec54d1ae00/5e/ccb58be2/Reader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/435e33f714ea13f9b99b88b164c6d0b91fd8b28f78435bddc31db2cb2981e2de/ToCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6335a9b3ee98432a2f7d34b0e72bc7ff493724d88a327119c915b2d7a511c/FromQueryAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8051f2d3b5d2fb7d6528954ad3e6bfe33bdfda178290f4d4a8cb683561648/IHeaderDictionary.Keyed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b34eef3a22e5b353fa75af531b179226d42b88d39fbefa3f0d8d4372def62a3/HttpRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ce37be1a06b16c6faa02038d2cc477dd3bca5b217ceeb41c5f2ad45c1bf9/ServiceProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/df216c6e21d1af4579b4ec18c721f06a8575eb34288c56957f8656906d4bb3/FromHeaderAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fe7c89f1f11c925864f979c6cda1e8df45612d8f9f65ded5c9735a32940/RedirectResult.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UrlShortener.Application/Responses/CreateRequestResponse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/UrlShortener.Application/Responses/GetTrafficRedirectResponse.cs" root0="FORCE_HIGHLIGHTING" />
@@ -87,8 +97,8 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13328488" />
-      <window_info id="Commit" order="1" weight="0.22863372" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13270348" />
+      <window_info id="Commit" order="1" weight="0.13328488" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -104,11 +114,11 @@
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.33153737" />
       <window_info anchor="bottom" id="Problems" order="1" />
       <window_info anchor="bottom" id="Problems View" order="2" weight="0.33153737" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.33153737" />
-      <window_info active="true" anchor="bottom" id="Build" order="4" visible="true" weight="0.5168822" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.5168822" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.2905891" />
+      <window_info anchor="bottom" id="Build" order="4" weight="0.2905891" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.2905891" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.3301006" />
-      <window_info anchor="bottom" id="NuGet" order="7" weight="0.33153737" />
+      <window_info active="true" anchor="bottom" id="NuGet" order="7" visible="true" weight="0.2905891" />
       <window_info anchor="bottom" id="Services" order="8" />
       <window_info anchor="bottom" id="EF Core" order="9" weight="0.33153737" />
       <window_info anchor="right" id="Endpoints" />
@@ -116,9 +126,9 @@
       <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="right" id="Resource Connections (Deprecated)" />
       <window_info anchor="right" id="Test Coverage" />
-      <window_info active="true" anchor="right" id="Notifications" order="0" visible="true" weight="0.19840115" />
+      <window_info anchor="right" id="Notifications" order="0" weight="0.07979651" />
       <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
-      <window_info anchor="right" id="Database" order="2" weight="0.19840115" />
+      <window_info active="true" anchor="right" id="Database" order="2" visible="true" weight="0.27543604" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
       <window_info anchor="right" id="Maven" order="4" weight="0.25" />
       <window_info anchor="right" id="Monitoring" order="5" weight="0.3300872" />
@@ -183,7 +193,8 @@
       <option name="presentableId" value="Default" />
       <updated>1734709345425</updated>
       <workItem from="1734709346551" duration="27024000" />
-      <workItem from="1736004508151" duration="2308000" />
+      <workItem from="1736004508151" duration="2380000" />
+      <workItem from="1736071874849" duration="11352000" />
     </task>
     <task id="LOCAL-00001" summary="update to windows">
       <option name="closed" value="true" />
@@ -209,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734832113823</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update to mac">
+      <option name="closed" value="true" />
+      <created>1736006976902</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736006976902</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,25 +250,51 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="update to windows" />
-    <MESSAGE value="update to mac" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update to mac" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to mac" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/RedirectController.cs</url>
-          <line>26</line>
-          <properties documentPath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/RedirectController.cs" containingFunctionPresentation="Method 'RedirectTraffic'">
+          <url>file://$PROJECT_DIR$/UrlShortener.Application/Handlers/CreateRequestHandler.cs</url>
+          <line>44</line>
+          <properties documentPath="$PROJECT_DIR$/UrlShortener.Application/Handlers/CreateRequestHandler.cs" containingFunctionPresentation="Method 'Handle'">
             <startOffsets>
-              <option value="718" />
+              <option value="1588" />
             </startOffsets>
             <endOffsets>
-              <option value="765" />
+              <option value="1748" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/UrlShortener.Infrastructure/Services/GeoIPService.cs</url>
+          <line>51</line>
+          <properties documentPath="$PROJECT_DIR$/UrlShortener.Infrastructure/Services/GeoIPService.cs" containingFunctionPresentation="Method 'FindLocationByIPAsync'">
+            <startOffsets>
+              <option value="1774" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1809" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/UrlShortener.Infrastructure/Services/GeoIPService.cs</url>
+          <line>56</line>
+          <properties documentPath="$PROJECT_DIR$/UrlShortener.Infrastructure/Services/GeoIPService.cs" containingFunctionPresentation="Method 'FindLocationByIPAsync'">
+            <startOffsets>
+              <option value="1887" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1944" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

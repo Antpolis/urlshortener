@@ -9,8 +9,8 @@ namespace UrlShortener.Domain.Entities;
 public class TagEntity: AuditAbstract {
   
   [Key]
-  [Column("id")]
-  public int ID { get; set; }
+  [Column("id", TypeName = "integer")]
+  public uint ID { get; set; }
 
   [Required]
   [MaxLength(255)]

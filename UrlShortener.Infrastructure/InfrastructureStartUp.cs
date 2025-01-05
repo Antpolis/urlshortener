@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using UrlShortener.Application.Interfaces;
 using UrlShortener.Application.Services;
 using UrlShortener.Domain.Entities;
@@ -27,7 +28,9 @@ public static class InfrastructureStartUp
             connectionBuilder.Host= configuration["DB:Host"];
             connectionBuilder.Database = configuration["DB:Name"];
             connectionBuilder.Encoding = "UTF8";
-            o.UseNpgsql(connectionBuilder.ConnectionString);
+            o.UseNpgsql(connectionBuilder.ConnectionString)
+                .EnableDetailedErrors()
+                .ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning));
         });
         services.AddScoped<IApplicationContext>(p=>p.GetRequiredService<ApplicationDBContext>());
         services.AddTransient<ILocationService, GeoIPService>();

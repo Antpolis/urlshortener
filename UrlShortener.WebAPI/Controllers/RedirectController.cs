@@ -4,8 +4,9 @@ using UrlShortener.Application.Queries;
 
 namespace UrlShortener.WebAPI.Controllers;
 
-[Microsoft.AspNetCore.Components.Route("")]
-public class RedirectController {
+[Controller]
+[Route("")]
+public class RedirectController: ControllerBase{
 
   private readonly ISender _sender;
   
@@ -14,15 +15,17 @@ public class RedirectController {
   }
   
   [HttpGet("{hash}")]
-  public async Task<RedirectResult> RedirectTraffic([FromQuery] string hash, [FromHeader] string host, HttpRequest request) {
+  public async Task<RedirectResult> RedirectTraffic([FromQuery] string hash, [FromHeader] string host) {
     var senderModel = new GetTrafficRedirectQuery()
     {
       Host = host,
       Hash = hash,
-      UserAgent = request.Headers.UserAgent.ToString(),
+      UserAgent = Request.Headers.UserAgent.ToString(),
       RequestDate = new DateTime(),
-      Headers = request.Headers.ToList()
+      Headers = Request.Headers.ToList(),
+      IP = HttpContext.Connection.RemoteIpAddress 
     };
+    
     
     var response = await _sender.Send(senderModel);
     return new RedirectResult(response.RedirectUrl, response.PermRedirect);

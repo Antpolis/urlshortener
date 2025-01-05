@@ -10,10 +10,12 @@ public class AccountEntity {
   public uint ID {get;set;} 
   
   [Column("name", TypeName = "varchar(255)")]
+  [StringLength(255)]
   public string? Name {get;set;}
 
   [EmailAddress]  
-  [Column("contactEmail", TypeName = "varchar(255)")]
+  [StringLength(1024)]
+  [Column("contactEmail", TypeName = "varchar(1024)")]
   public string? ContactEmail {get;set;}
 
   [InverseProperty("Account")]

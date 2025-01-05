@@ -8,10 +8,10 @@ namespace UrlShortener.Domain.Entities;
 public class RequestLocationEntity
 {
   [Key]
-  [Column("id")]
+  [Column("id", TypeName = "bigint")]
   public ulong ID {get;set;}  
   
-  [Column("continent", TypeName = "varchar(5)")]
+  [Column("continentCode", TypeName = "varchar(5)")]
   public string? ContinentCode {get;set;}
 
   [Column("continentName", TypeName = "varchar(256)")]
@@ -44,14 +44,10 @@ public class RequestLocationEntity
   [Column("longitude", TypeName = "varchar(12)")]
   public string? Longitude {get;set;}  
   
-  [Column("requestID")]
-  public ulong RequestID {get;set;}
-  
-  [Column("hashCache")]
+  [Column("hashCache", TypeName = "varchar(50)")]
   [StringLength(50)]
   public string HashCache {get;set;}
-
-  [ForeignKey("RequestID")]
-  [Required]
-  public RequestEntity Request {get;set;} = null!;
+  
+  [InverseProperty("RequestLocation")]
+  public virtual RequestEntity Request {get;set;} = null!;
 }

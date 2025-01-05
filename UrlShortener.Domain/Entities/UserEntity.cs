@@ -12,7 +12,7 @@ public class UserEntity: IAuditableUser
   [Key]  
   public Guid ID {get;set;}
 
-  [Column("password", TypeName = "varchar(255)")]
+  [Column("password", TypeName = "varchar(50)")]
   [Required]
   public string Password {get;set;} = null!;
 
@@ -20,13 +20,15 @@ public class UserEntity: IAuditableUser
   [Required]
   public string PasswordHash {get;set;} = null!;
 
-  [Column("email", TypeName = "varchar(255)")]
+  [Column("email", TypeName = "varchar(1024)")]
   [Required]
+  [EmailAddress]  
+  [StringLength(1024)]
   public string Email {get;set;} = null!;
 
-  [Column("code", TypeName = "varchar(255)")]
+  [Column("code", TypeName = "varchar(32)")]
   public string? Code {get;set;}
 
-  [Column("codeExpire", TypeName = "datetime")]
+  [Column("codeExpire", TypeName = "TIMESTAMPTZ")]
   public DateTime? CodeExpire {get;set;}
 }

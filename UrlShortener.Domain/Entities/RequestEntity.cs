@@ -6,7 +6,7 @@ namespace UrlShortener.Domain.Entities;
 [Table("request")]
 public class RequestEntity {
   [Key]
-  [Column("id", TypeName = "long")]
+  [Column("id", TypeName = "bigint")]
   public ulong ID {get;set;}
 
   [Column("URLID", TypeName = "bigint")]
@@ -48,16 +48,16 @@ public class RequestEntity {
   [Column("platform", TypeName = "varchar(256)")]
   public string? Platform {get;set;}
 
-  [Column("requestedDate", TypeName = "datetime")]
+  [Column("requestedDate", TypeName = "TIMESTAMPTZ")]
   public DateTime? RequestedDate {get;set;}
 
-  [Column("locationID", TypeName = "bigint")]
+  [Column("requestLocationID", TypeName = "bigint")]
   public ulong? RequestLocationID {get;set;}
 
   [ForeignKey("RequestLocationID")]
   public RequestLocationEntity? RequestLocation {get;set;}
 
-  [Column("requestDate", TypeName = "datetime")]
+  [Column("requestDate", TypeName = "TIMESTAMPTZ")]
   public DateTime? RequestDate {get;set;}
 
   [Column("forwardIP", TypeName = "varchar(18)")]
