@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using UrlShortener.Domain.Abstracts;
 
 namespace UrlShortener.Domain.Entities;
 
 [Table("url")]
-public class URLEntity {
+public class URLEntity: AuditAbstract {
   [Key]
   [Column("id", TypeName = "bigint")]
   public ulong ID { get; set; }
@@ -29,7 +30,7 @@ public class URLEntity {
   public string? Description { get; set; }
 
   [Column("hash", TypeName = "varchar(125)")]
-  public string? Hash { get; set; }
+  public string Hash { get; set; }
 
   [Column("startDate", TypeName = "TIMESTAMPTZ")]
   public DateTime? StartDate { get; set; }

@@ -10,26 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="314ed228-c59d-434c-8cbe-f9ba37e55eb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/UrlShortener.Application/DTOs/GeoLocation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources/f79a65b6-cbd1-4538-be65-100be9c753bd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources/f79a65b6-cbd1-4538-be65-100be9c753bd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources/f79a65b6-cbd1-4538-be65-100be9c753bd/storage_v2/_src_/database/url-shortener.tGKItw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/dataSources/f79a65b6-cbd1-4538-be65-100be9c753bd/storage_v2/_src_/database/url-shortener.tGKItw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.urlShortener/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Handlers/CreateRequestHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Handlers/CreateRequestHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Handlers/GetTrafficRedirectHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Handlers/GetTrafficRedirectHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Interfaces/ILocationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Interfaces/ILocationService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Application/Queries/GetTrafficRedirectQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Application/Queries/GetTrafficRedirectQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/AccountEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/AccountEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/DomainEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/DomainEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestLocationEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/RequestLocationEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/TagEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/TagEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/URLEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/URLEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Domain/Entities/UserEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Domain/Entities/UserEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Infrastructure/InfrastructureStartUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Infrastructure/InfrastructureStartUp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.Infrastructure/Services/GeoIPService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.Infrastructure/Services/GeoIPService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/RedirectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UrlShortener.WebAPI/Controllers/RedirectController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/urlShortener.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/urlShortener.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +79,7 @@
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13270348" />
-      <window_info id="Commit" order="1" weight="0.13328488" />
+      <window_info id="Commit" order="1" weight="0.13270348" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -194,7 +175,7 @@
       <updated>1734709345425</updated>
       <workItem from="1734709346551" duration="27024000" />
       <workItem from="1736004508151" duration="2380000" />
-      <workItem from="1736071874849" duration="11352000" />
+      <workItem from="1736071874849" duration="11855000" />
     </task>
     <task id="LOCAL-00001" summary="update to windows">
       <option name="closed" value="true" />
@@ -228,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736006976902</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update for mac">
+      <option name="closed" value="true" />
+      <created>1736085382703</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736085382703</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +241,8 @@
     <MESSAGE value="update to windows" />
     <MESSAGE value="update" />
     <MESSAGE value="update to mac" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to mac" />
+    <MESSAGE value="update for mac" />
+    <option name="LAST_COMMIT_MESSAGE" value="update for mac" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

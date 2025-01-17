@@ -16,8 +16,8 @@ public class DomainEntity {
   [Column("totalShortenURL")]
   public uint TotalShortenURL {get;set;}
   
-  [Column("domain", TypeName = "varchar(255)")]
-  public string? Domain {get;set;}
+  [Column("domainURL", TypeName = "varchar(255)")]
+  public string? DomainURL {get;set;}
 
   [Column("system")]
   [DefaultValue(false)]

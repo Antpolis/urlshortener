@@ -46,10 +46,12 @@ public class GetTrafficRedirectHandler(IApplicationContext applicationContext, I
 
     public async Task<GetTrafficRedirectResponse> Handle(GetTrafficRedirectQuery request, CancellationToken cancellationToken)
     {
-        var domainModel = await _applicationContext.DomainEntity.AsQueryable().GetByName(request.Host).FirstOrDefaultAsync(cancellationToken);
+        var domainModel = await _applicationContext.DomainEntity.AsQueryable().GetByDomain(request.Host).FirstOrDefaultAsync(cancellationToken);
 
-        var returnResult = new GetTrafficRedirectResponse();
-        returnResult.PermRedirect = false;
+        var returnResult = new GetTrafficRedirectResponse() {
+            PermRedirect = false,
+            RedirectUrl = "https://google.com"
+        };        
         if(domainModel != null)
         {
             returnResult.RedirectUrl = domainModel.DefaultLink;
@@ -61,23 +63,14 @@ public class GetTrafficRedirectHandler(IApplicationContext applicationContext, I
         
         if(urlModel != null)
         {
-            // returnResult.RedirectUrl = urlModel.RedirectUrl;
-            // returnResult.PermRedirect = true;
-            //
-            // var ipAddress = request.Headers
-            //     .FirstOrDefault(header => VALID_IP_HEADER_CANDIDATES.Contains(header.Key))
-            //     .Value.ToString() ?? "unknown";
-            //
-            // var createRequestCommand = request.ToCreateRequest(urlModel.ID, ipAddress);
-
-            //
-            // console.log("Request Dump Result: ", urlRequestObjct)
-            // await sendSnsTopic(urlRequestObjct,'/raw-request/'+domainName+'/'+hash, ['request'],urlEntity.id);
-            //
-            // if (redirectURL) {
-            //     response.status(301)
-            //     redirectURL = urlEntity.redirectURL          
-            // }
+            returnResult.RedirectUrl = urlModel.RedirectUrl;
+            returnResult.PermRedirect = true;
+            
+            var ipAddress = request.Headers
+                .FirstOrDefault(header => VALID_IP_HEADER_CANDIDATES.Contains(header.Key))
+                .Value.ToString() ?? "unknown";
+            
+            var createRequestCommand = request.ToCreateRequest(urlModel.ID, ipAddress);
         }
 
         return returnResult;

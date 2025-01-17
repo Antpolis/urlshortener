@@ -11,6 +11,11 @@ public static partial class URLQueryExtension {
       .Where(d => d.Hash == hash);
   }
 
+  public static IQueryable<URLEntity> GetByID(this IQueryable<URLEntity> query, ulong ID) {
+    return query
+      .Where(d => d.ID == ID);
+  }
+
   public static IQueryable<URLEntity> ByActive(this IQueryable<URLEntity> query) {
     return query.Where(d=>d.IsActive);
   }

@@ -25,8 +25,6 @@ public class RedirectController: ControllerBase{
       Headers = Request.Headers.ToList(),
       IP = HttpContext.Connection.RemoteIpAddress 
     };
-    
-    
     var response = await _sender.Send(senderModel);
     return new RedirectResult(response.RedirectUrl, response.PermRedirect);
   }
