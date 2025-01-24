@@ -38,7 +38,7 @@ public class UrlController : ControllerBase
     }
 
     [HttpPost("update/{id}")]
-    public IActionResult UpdateUrl(int id, [FromBody] Url url)
+    public IActionResult UpdateUrl(int id, [FromBody] UpdateURLCommand url)
     {
         var existingUrl = _repository.GetUrl(id);
         if (existingUrl == null)

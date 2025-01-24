@@ -3,7 +3,7 @@ using System;
 namespace UrlShortener.Application.DTOs;
 
 public record URLDTO {
-  public ulong? ID { get; set; }
+  public ulong ID { get; set; }
   public string FullURL {get;set;}
   public string Hash {get;set;}
   public uint DomainID {get;set;}
