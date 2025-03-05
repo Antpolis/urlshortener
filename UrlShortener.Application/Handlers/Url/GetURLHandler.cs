@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using UrlShortener.Application.Commands.Url;
 using UrlShortener.Application.DTOs;
 using UrlShortener.Application.Interfaces;
+using UrlShortener.Application.Mappers;
 using UrlShortener.Application.QueryExtensions;
 
 namespace UrlShortener.Application.Handlers.Url;
@@ -12,6 +13,12 @@ public class GetURLHandler(IApplicationContext applicationContext) : IRequestHan
 
   private readonly IApplicationContext _applicationContext = applicationContext;
     public async Task<URLDTO>? Handle(GetURLQuery request, CancellationToken cancellationToken) {
-      return await _applicationContext.UrlEntity.AsQueryable().GetByID(request.ID).FirstOrDefaultAsync(cancellationToken);
+      var model =  await _applicationContext.UrlEntity.AsQueryable().GetByID(request.ID).FirstOrDefaultAsync(cancellationToken);
+      if (model != null)
+      {
+        return model.ToDTO();
+      }
+
+      return null;
     }
 }

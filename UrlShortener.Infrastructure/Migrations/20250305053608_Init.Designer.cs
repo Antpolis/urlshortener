@@ -12,8 +12,8 @@ using UrlShortener.Infrastructure.Persistence;
 namespace UrlShortener.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20250105135441_Initial")]
-    partial class Initial
+    [Migration("20250305053608_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,9 +66,9 @@ namespace UrlShortener.Infrastructure.Migrations
                         .HasColumnType("varchar(1024)")
                         .HasColumnName("defaultLink");
 
-                    b.Property<string>("Domain")
+                    b.Property<string>("DomainURL")
                         .HasColumnType("varchar(255)")
-                        .HasColumnName("domain");
+                        .HasColumnName("domainURL");
 
                     b.Property<bool>("IsSystem")
                         .HasColumnType("boolean")
@@ -297,6 +297,15 @@ namespace UrlShortener.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasColumnName("clientID");
 
+                    b.Property<Guid?>("CreatedBy")
+                        .HasColumnType("uuid")
+                        .HasColumnName("createdBy");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMPTZ")
+                        .HasColumnName("createdDate");
+
                     b.Property<string>("Description")
                         .HasColumnType("text")
                         .HasColumnName("description");
@@ -314,12 +323,22 @@ namespace UrlShortener.Infrastructure.Migrations
                         .HasColumnName("fullURL");
 
                     b.Property<string>("Hash")
+                        .IsRequired()
                         .HasColumnType("varchar(125)")
                         .HasColumnName("hash");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean")
                         .HasColumnName("active");
+
+                    b.Property<Guid?>("LastModifiedBy")
+                        .HasColumnType("uuid")
+                        .HasColumnName("lastModifiedBy");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("TIMESTAMPTZ")
+                        .HasColumnName("lastModifiedDate");
 
                     b.Property<int?>("OwnerID")
                         .HasColumnType("int")

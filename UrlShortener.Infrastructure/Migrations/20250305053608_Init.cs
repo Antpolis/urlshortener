@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace UrlShortener.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,7 +34,7 @@ namespace UrlShortener.Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     AccountID = table.Column<long>(type: "bigint", nullable: true),
                     totalShortenURL = table.Column<long>(type: "bigint", nullable: false),
-                    domain = table.Column<string>(type: "varchar(255)", nullable: true),
+                    domainURL = table.Column<string>(type: "varchar(255)", nullable: true),
                     system = table.Column<bool>(type: "boolean", nullable: false),
                     defaultLink = table.Column<string>(type: "varchar(1024)", nullable: false)
                 },
@@ -111,12 +111,16 @@ namespace UrlShortener.Infrastructure.Migrations
                     accountID = table.Column<int>(type: "int", nullable: true),
                     ownerID = table.Column<int>(type: "int", nullable: true),
                     description = table.Column<string>(type: "text", nullable: true),
-                    hash = table.Column<string>(type: "varchar(125)", nullable: true),
+                    hash = table.Column<string>(type: "varchar(125)", nullable: false),
                     startDate = table.Column<DateTime>(type: "TIMESTAMPTZ", nullable: true),
                     endDate = table.Column<DateTime>(type: "TIMESTAMPTZ", nullable: true),
                     campaignID = table.Column<int>(type: "int", nullable: true),
                     clientID = table.Column<int>(type: "int", nullable: true),
-                    active = table.Column<bool>(type: "boolean", nullable: false)
+                    active = table.Column<bool>(type: "boolean", nullable: false),
+                    createdDate = table.Column<DateTime>(type: "TIMESTAMPTZ", nullable: false),
+                    createdBy = table.Column<Guid>(type: "uuid", nullable: true),
+                    lastModifiedDate = table.Column<DateTime>(type: "TIMESTAMPTZ", nullable: true),
+                    lastModifiedBy = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {

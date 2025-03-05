@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using UrlShortener.Application.Commands.Url;
 using UrlShortener.Application.DTOs;
-using UrlShortener.WebAPI.Requests;
 
 namespace UrlShortener.WebAPI.Controllers;
 
@@ -38,21 +37,14 @@ public class UrlController : ControllerBase
     }
 
     [HttpPost("update/{id}")]
-    public IActionResult UpdateUrl(int id, [FromBody] UpdateURLCommand url)
-    {
-        var existingUrl = _repository.GetUrl(id);
-        if (existingUrl == null)
-        {
-            return NotFound();
-        }
-        _repository.UpdateUrl(url);
-        return Ok(url);
+    public IActionResult UpdateUrl(int id, [FromBody] UpdateURLCommand url) {
+        return NotFound();
     }
 
     [HttpDelete("{id}")]
     public IActionResult DeleteUrl(int id)
     {
-        _repository.DeleteUrl(id);
+        
         return NoContent();
     }
 }

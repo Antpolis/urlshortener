@@ -21,6 +21,16 @@ public static partial class URLMapper {
     };
   }
 
+  public static URLDTO ToDTO(this URLEntity model) {
+    return new URLDTO()
+    {
+      ID = model.ID,
+      FullURL = string.IsNullOrEmpty(model.FullURL)?"":model.FullURL,
+      Hash = model.Hash,
+      DomainID = model.DomainID ?? 0,
+    };
+  }
+
   public static CreateURLResponse ToCreateURLResponse(this URLEntity model) {
     return new()
     {
