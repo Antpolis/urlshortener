@@ -20,4 +20,7 @@ public class AccountEntity {
 
   [InverseProperty("Account")]
   public ICollection<URLEntity>? Urls {get;set;}
+
+  [InverseProperty("Account")]
+  public ICollection<DomainEntity>? Domains {get;set;}
 }

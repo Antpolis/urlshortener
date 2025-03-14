@@ -14,9 +14,11 @@ public class TagEntity: AuditAbstract {
 
   [Required]
   [MaxLength(255)]
+  [Column("key", TypeName = "varchar(255)")]
   public string Key { get; set; } = null!;
   
   [Required]
   [MaxLength(255)]
+  [Column("value", TypeName = "varchar(255)")]
   public string Value { get; set; } = null!;
 }

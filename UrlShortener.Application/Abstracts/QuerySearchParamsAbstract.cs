@@ -2,7 +2,7 @@
 
 namespace UrlShortener.Application.Abstracts;
 
-public abstract class QuerySearchParamsAbstract: IQuerySearchParams
+public abstract record QuerySearchParamsAbstract: IQuerySearchParams
 {
     public int Limit { get; set; } = 15;
     public string? OrderBy { get; set; } = null;

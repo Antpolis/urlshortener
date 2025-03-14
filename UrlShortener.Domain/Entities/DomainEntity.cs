@@ -1,17 +1,21 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using UrlShortener.Domain.Abstracts;
 
 namespace UrlShortener.Domain.Entities;
 
 [Table("domain")]
-public class DomainEntity {
+public class DomainEntity: AuditAbstract {
   [Key]
   [Column("id", TypeName = "integer")]
   public uint ID {get;set;}
 
-  [ForeignKey("accountID")]
+  [Column("accountID")]
   public uint? AccountID {get;set;}
+
+  [ForeignKey("AccountID")]
+  public virtual AccountEntity? Account {get;set;}
 
   [Column("totalShortenURL")]
   public uint TotalShortenURL {get;set;}
